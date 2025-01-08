@@ -304,7 +304,7 @@ app.get('/admin/club/:clubName', async (req, res) => {
     }
 });
 
-const PORT = 5000;
+const PORT = 3006;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
