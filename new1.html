@@ -82,7 +82,7 @@
             const eventContainer = document.getElementById('eventContainer');
 
             try {
-                const response = await fetch('http://localhost:5000/events'); // Adjust the endpoint as needed
+                const response = await fetch('https://kitsclubsbackend.makeskilled.com/events'); // Adjust the endpoint as needed
                 const events = await response.json();
 
                 events.forEach(event => {
@@ -109,7 +109,7 @@
 
         async function registerEvent(eventId) {
             try {
-                const response = await fetch(`http://localhost:5000/events/register/${eventId}`, {
+                const response = await fetch(`https://kitsclubsbackend.makeskilled.com/events/register/${eventId}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                 });
