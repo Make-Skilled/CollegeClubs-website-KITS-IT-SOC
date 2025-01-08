@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Education</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            background-image: url('background.jfif'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #b22222;
+        }
+
+        .content {
+            margin: 20px 0;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .content p {
+            margin: 10px 0;
+        }
+
+        .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 20px;
+      margin-left: 150px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      background-color: #e8f0fc;
+      border: 2px solid #1a73e8;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      text-align: left;
+    }
+
+    .card-icon {
+      font-size: 40px;
+      color: #ffffff;
+      background-color: #1a73e8;
+      border-radius: 4px;
+      width: 90px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+    
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-number {
+      font-size: 24px;
+      color: #1a73e8;
+      font-weight: bold;
+      margin-bottom: 5px;
+      margin-left: 70px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      color: #333333;
+    }
+    .circle-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 3px solid #1a237e;
+            margin-left: 700px;
+        }
+        
+        .circle-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .containerp {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    
+    h2 {
+      color: navy;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f0f0f0;
+      color: blue;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f8f8f8;
+    }
+    .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: none;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+   .admin-header h1{
+    font-size: 40px;
+   }
+        .welcome-text {
+            color: #1a237e;
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .add-event-btn {
+            background-color: greenyellow;
+            color: rgb(18, 17, 17);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .add-event-btn:hover {
+            background-color: #05f962;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-header">
+        <h1 class="welcome-text">Welcome Admin</h1>
+        <button class="add-event-btn" onclick="window.location.href='addeventsform.html'">Add Event</button>
+    </div>
+    <h1 style="margin-left: 690px; margin-top: 50px;">Sports Club</h1>
+    <img src="sports.jpg" alt="sportsimg" class="circle-image">
+    <div class="container">
+        <div class="header">
+            <h1>Physical Education</h1>
+            <img src="sportsimg.jpg" alt="Physical Education Overview">
+        </div>
+
+        <div class="content">
+            <p>KITS College promotes sports and games for enhancing the physical and psychological development of students. Sports & Games are organized regularly in the college to develop team spirit, leadership qualities, and organizing abilities among the students. A full-time qualified Physical Director was appointed to look after the day-to-day games and sports activities of the college. Mr. K. Venkata Rao is the Physical Director of KITS.</p>
+
+            <h2>Basic Functions of Sports Committee</h2>
+            <ul>
+                <li>Responsibility of procuring all types of sporting inventory as per requirements</li>
+                <li>Maintaining the inventory</li>
+                <li>Avail sports stuff to the students on a daily basis</li>
+                <li>Conducts Annual Sports meet, KITS YUVA Events – Intra and Inter sports activities</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<h1 style="text-align: center; margin: 70px;">Sports Facilities & Infrastructure</h1>
+<div class="grid-container">
+    <div class="card">
+      <div class="card-icon">🏐</div>
+      <div class="card-content">
+        <div class="card-number">3</div>
+        <div class="card-title">Floodlit Volleyball Courts</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏀</div>
+      <div class="card-content">
+        <div class="card-number">1</div>
+        <div class="card-title">Floodlit Concrete Basketball Courts</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏐</div>
+      <div class="card-content">
+        <div class="card-number">1</div>
+        <div class="card-title">Throwball Courts</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏸</div>
+      <div class="card-content">
+        <div class="card-number">1</div>
+        <div class="card-title">Floodlit Ball Badminton Courts</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏓</div>
+      <div class="card-content">
+        <div class="card-number">2</div>
+        <div class="card-title">Indoor Stadiums</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏟️</div>
+      <div class="card-content">
+        <div class="card-number">1</div>
+        <div class="card-title">A/C Multipurpose Indoor Stadium</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏃</div>
+      <div class="card-content">
+        <div class="card-number">40m</div>
+        <div class="card-title">Floodlit Standard Track & Field</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#127942;</div>
+      <div class="card-content">
+        <div class="card-number">1</div>
+        <div class="card-title">Kabbadi court</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚽</div>
+      <div class="card-content">
+        <div class="card-number">1</div>
+        <div class="card-title">Football Fields </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏃</div>
+      <div class="card-content">
+        <div class="card-number">1</div>
+        <div class="card-title">Long Jump Pit</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏏</div>
+      <div class="card-content">
+        <div class="card-number">1</div>
+        <div class="card-title">Cricket Field (Turf Wicket)</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏃</div>
+      <div class="card-content">
+        <div class="card-number">1</div>
+        <div class="card-title">Kho-Kho</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="containerp">
+    <h2 style="margin-top: 50px; margin-bottom: 50px; font-size: 30px;">Committee Members</h2>
+    <table>
+      <tr>
+        <th>S.no</th>
+        <th>Name</th>
+        <th>Department & Designation</th>
+        <th>Position</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Mr. M.Madhusudan Reddy</td>
+        <td>Asst. Prof. ECE</td>
+        <td>Convener</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Mr. K.Venkat Rao</td>
+        <td>Physical Director</td>
+        <td>Co-Convener</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Mr. J.Naga Mohan</td>
+        <td>Asst. Prof. Civil</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Mr. M.Naveen Kumar</td>
+        <td>Asst. Prof. EEE</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Mr. Sk.Jhony</td>
+        <td>Asst. Prof. Mech</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Mr. K.Jeevan Ratnakar</td>
+        <td>Asst. Prof. CSE</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Mr. K.Chandra Reddy</td>
+        <td>Asst. Prof. MBA</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Mr. B.Sudhakar</td>
+        <td>Asst. Prof. BS&H</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Mr. Ch.Viswanath Sai</td>
+        <td>Asst. PD</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Ms.M.Likith Raghava</td>
+        <td>17JR1A05B5</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Mr.M.Vamsi</td>
+        <td>17JR1A0353</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Mr.P.Rakesh</td>
+        <td>17JR1A0247</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Mr.P.Bhargav</td>
+        <td>18JR1A0239</td>
+        <td>Member</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Ms.M.Pragna</td>
+        <td>17JR1A0585</td>
+        <td>Member</td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>

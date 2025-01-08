@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            background-image: url('background.jfif'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .event-card h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .event-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #666;
+        }
+
+        .event-details p {
+            margin: 0;
+        }
+
+        .register-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        .register-btn:hover {
+            background-color: #0056b3;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .registration-form {
+            position: fixed;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            z-index: 1000;
+            transition: top 0.5s ease;
+        }
+
+        .registration-form.active {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .registration-form h3 {
+            margin-top: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        .registration-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .registration-form input, .registration-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .registration-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .registration-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upcoming Events</h1>
+        <div id="eventContainer">
+            <!-- Event cards will be dynamically injected here -->
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="registration-form" id="registrationForm">
+        <h3>Register</h3>
+        <form id="form">
+            <label for="rollNumber">Roll Number</label>
+            <input type="text" id="rollNumber" name="rollNumber" required>
+
+            <label for="department">Department</label>
+            <select id="department" name="department" required>
+                <option value="">Select Department</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="IT">IT</option>
+                <option value="CAI&ML">CAI</option>
+                <option value="AI&ML">AI&ML</option>
+                <option value="EEE">EEE</option>
+                <option value="CSD">CSD</option>
+            </select>
+
+            <label for="year">Year</label>
+            <select id="year" name="year" required>
+                <option value="">Select Year</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function openRegisterForm() {
+            document.getElementById('overlay').classList.add('active');
+            document.getElementById('registrationForm').classList.add('active');
+        }
+
+        function closeRegisterForm() {
+            document.getElementById('overlay').classList.remove('active');
+            document.getElementById('registrationForm').classList.remove('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const eventContainer = document.getElementById('eventContainer');
+            const registrationForm = document.getElementById('registrationForm');
+            const overlay = document.getElementById('overlay');
+
+            try {
+                const response = await fetch('http://localhost:5000/events');
+                const events = await response.json();
+
+                events.forEach(event => {
+                    const card = document.createElement('div');
+                    card.className = 'event-card';
+
+                    card.innerHTML = `
+                        <h3>${event.eventName}</h3>
+                        <div class="event-details">
+                            <p><strong>Date:</strong> ${event.date}</p>
+                            <p><strong>Time:</strong> ${event.time}</p>
+                            <p><strong>Venue:</strong> ${event.venue}</p>
+                            <button class="register-btn" onclick="openRegisterForm()">Register</button>
+                        </div>
+                    `;
+
+                    eventContainer.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error fetching events:', error);
+                eventContainer.innerHTML = '<p>Failed to load events. Please try again later.</p>';
+            }
+
+            overlay.addEventListener('click', closeRegisterForm);
+
+            document.getElementById('form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const rollNumber = document.getElementById('rollNumber').value;
+                const department = document.getElementById('department').value;
+                const year = document.getElementById('year').value;
+
+                try {
+                    const response = await fetch('http://localhost:5000/register', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ rollNumber, department, year }),
+                    });
+
+                    const result = await response.json();
+                    alert(result.message || 'Registration successful!');
+                    closeRegisterForm();
+                } catch (error) {
+                    console.error('Error submitting registration:', error);
+                    alert('Failed to register. Please try again.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrepreneurship Cell - Student Club</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jfif'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            background: none;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 100px;
+            margin-right: 50px;
+        }
+        
+        .header h1 {
+            color: #1a237e;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        
+        .institution-name {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        .circle-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 3px solid #1a237e;
+        }
+        
+        .circle-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #1a237e;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 10px;
+        }
+
+        .p {
+            margin-left: 600px;
+            font-size: 20px;
+            color: #1a237e;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .main-containerp {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .headingp {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1a237e;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 10px;
+            width: 100%;
+        }
+
+        .containerp {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .image-boxp {
+            flex: 1;
+            min-width: 200px;
+            max-width: calc(16.666% - 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-boxp:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-boxp img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .image-textp {
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .faculty-advisor {
+            text-align: center;
+            margin-top: 20px;
+            color: #1a237e;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-boxp {
+                max-width: calc(50% - 20px);
+            }
+            
+            .p {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+        }
+        .sidebar {
+            width: 80px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: rgba(245, 245, 245, 0.95);
+            padding: 5px;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-item img {
+            width: 30px;
+            height: 30px;
+            border-radius: 1px;
+            object-fit: cover;
+            margin-bottom: 0px;
+        }
+
+        .sidebar-item p {
+            text-align: center;
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        .view-events-button {
+            display: block;
+            width: 250px;
+            margin: 30px auto;
+            padding: 15px 25px;
+            background-color: #1a237e;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    
+        .view-events-button:hover {
+            background-color: #0d1657;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-item">
+            <img src="rise.jpg" alt="Activity 1" onclick="window.location.href='rise.html'">
+            <p>Rise</p>
+        </div>
+        <div class="sidebar-item">
+            <img src="ecell.jpg" alt="Activity 2" onclick="window.location.href='ecell.html'">
+            <p>E-Cell</p>
+        </div>
+        <div class="sidebar-item">
+            <img src="innovation.jpg" alt="Activity 3" onclick="window.location.href='innovation.html'">
+            <p>Innovation</p>
+        </div>
+        <div class="sidebar-item">
+            <img src="nss.jpg" alt="Activity 4" onclick="window.location.href='nss.html'">
+            <p>NSS</p>
+        </div>
+        <div class="sidebar-item">
+            <img src="ncc.jpg" alt="Activity 5" onclick="window.location.href='ncc.html'">
+            <p>NCC</p>
+        </div>
+        <div class="sidebar-item">
+            <img src="jk.jpg" alt="Activity 6" onclick="window.location.href='jk.html'">
+            <p>JK Club</p>
+        </div>
+        <div class="sidebar-item">
+            <img src="sports.jpg" alt="Activity 7" onclick="window.location.href='sports.html'">
+            <p>Sports</p>
+        </div>
+        <div class="sidebar-item">
+            <img src="cultural.jpg" alt="Activity 8" onclick="window.location.href='cultural.html'">
+            <p>Cultural</p>
+        </div>
+    </div>
+    <div class="header">
+        <h3>Department of Information Technology</h3>
+        <h1>RISE CLUB</h1>
+        <div class="circle-image">
+            <img src="rise.jpg" alt="E-Cell Logo">
+        </div>
+        <div class="faculty-advisor">Advisor: Dr.M.S.S.Sai</div>
+    </div>
+    
+    
+    <p class="p" style="margin-left: 670px;">"Rise Up, Start Fresh"</p>
+    
+    <div class="content-grid">
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>Establishment of the rise clubbegan with an idea of 3 students who were invited to the Global summit 2014 held at IIT Kharagpur and were inspired by the way India's prestigious institutions are supporting the overall development of engineerung and management students across the country.</p>
+            <p>Empowering,cultivating,and ultimately serving those who follow you will unlock massive potential within your organization,allowing you to solve for problems in real time.</p>
+            <p>The members of the Entrepreneurship Cell play various roles such as Coordinators ,Masters, Mentors ,and Team Leaders while organizing different activities</p>
+
+        </div>
+        
+        <div class="section">
+            <h2>Objectives of Rise</h2>
+            <p>01. To Promote Creativity and Innovation</p>
+            <p>02. To Encourage Collaboration and Teamwork</p>
+            <p>03. To Provide Hands-on Learning Opportunities</p>
+            <p>04. To inspire innovation and out of box thinking</p>
+            <p>05. To Develop Problem-Solving Skills</p>
+            <p>06. To Support Networking and Skill Development</p>
+        
+        </div>
+        
+        <div class="section">
+            <h2>Our Culture</h2>
+            <p>Everyone in the Club is equal.
+                One delivers to the best one's ability.
+                No role is superior to any other role. No role is inferior to any other role.<br>
+                <br><br>
+                Activists can swap or rotate their roles depending upon their interests and talents as the programs go on.
+                So, the roles are dynamic and keep on evolving...
+            </p>
+            <br>
+            <p>We believe life skills are experienced and gained. We leave no stone unturned in motivating ourselves and in promoting human values.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Activities We Conducted</h2>
+            <p>1. Technical Quiz</p>
+            <p>2. Web designing on occasion on Independence Day</p>
+            <p>3. SOC on Ethereum</p>
+            <p>4. Faang Event</p>
+            <p>5. Junior Senior Interactions</p>
+            <p>6. Student wellness Program</p>
+            <p>7. Project Expo on web design</p>
+        </div>
+    </div>
+    <div class="main-containerp">
+        <h1 class="headingp">Our Club Gallery</h1>
+        <div class="containerp">
+            <div class="image-boxp">
+                <img src="perise.jpg" alt="Project Expo">
+                <p class="image-textp">Project Expo on Web Development</p>
+            </div>
+            <div class="image-boxp">
+                <img src="ssrise.jpg" alt="Skill Development">
+                <p class="image-textp">Student Skill Development</p>
+            </div>
+            <div class="image-boxp">
+                <img src="ethrise.jpg" alt="Ethereum">
+                <p class="image-textp">Ethereum Workshop</p>
+            </div>
+            <div class="image-boxp">
+                <img src="wdrise.jpg" alt="Web Designing">
+                <p class="image-textp">Web Designing Event</p>
+            </div>
+            <div class="image-boxp">
+                <img src="sjrise.jpg" alt="Robotics">
+                <p class="image-textp">Senior Junior Interaction</p>
+            </div>
+            <div class="image-boxp">
+                <img src="wbrise.jpg" alt="AI Workshop">
+                <p class="image-textp">Web Designing Event</p>
+            </div>
+            <div class="image-boxp">
+                <img src="sltrise.jpg" alt="AI Workshop">
+                <p class="image-textp">Students Learning Technical Skills</p>
+            </div>
+            <div class="image-boxp">
+                <img src="winrise.jpg" alt="AI Workshop">
+                <p class="image-textp">Technical Quiz</p>
+            </div>
+        </div>
+    </div>
+    <a href="upcoming.html" class="view-events-button">
+        View Upcoming Events
+    </a>
+</body>
+</html>

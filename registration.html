@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-image: url('background.jpg'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .name-group {
+            display: flex;
+            gap: 1rem;
+        }
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-column {
+            flex: 1;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .helper-text {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        button {
+            background-color: #00c853;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #00b34a;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Registration Form</h1>
+        <p class="subtitle">Fill out the form carefully for registration</p>
+        
+        <form>
+            <div class="form-group">
+                <label>Student Name</label>
+                <div class="name-group">
+                    <div class="form-column">
+                        <input type="text" placeholder="First Name" required>
+                        <div class="helper-text">First Name</div>
+                    </div>
+                    <div class="form-column">
+                        <input type="text" placeholder="Last Name" required>
+                        <div class="helper-text">Last Name</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-column">
+                    <label>Year</label>
+                    <select required>
+                        <option value="">Please Select</option>
+                        <option value="male">1</option>
+                        <option value="female">2</option>
+                        <option value="female">3</option>
+                        <option value="female">4</option>
+                    </select>
+                </div>
+                <div class="form-column">
+                    <label>Student E-mail</label>
+                    <input type="email" placeholder="ex: myname@example.com" required>
+                    <div class="helper-text">example@example.com</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-column">
+                    <label>Student ID</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-column">
+                    <label>List of Department</label>
+                    <select required>
+                        <option value="">Please Select</option>
+                        <option value="class1">CSE</option>
+                        <option value="class2">IT</option>
+                        <option value="class3">CSE(AI&ML)</option>
+                        <option value="class3">CSE(DS)</option>
+                        <option value="class3">ECE</option>
+                        <option value="class3">EEE</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

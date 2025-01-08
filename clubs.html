@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Logos and Introductions</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jfif');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px; /* Space below the heading */
+        }
+        .club {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Added to space out elements */
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            position: relative; /* Needed for absolute positioning of the button */
+        }
+        .club img {
+            width: 100px; /* Set the size of the logo */
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 50%; /* Makes the image circular */
+            object-fit: cover; /* Ensures the image covers the circle without distortion */
+        }
+        .club-info {
+            flex-grow: 1;
+        }
+        .club-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+        .club-description {
+            font-size: 1em;
+            color: #555;
+            margin-top: 9px;
+        }
+        .view-details {
+            position: absolute;
+            right: 10px; /* Position the button at the right corner */
+            top: 50%;
+            transform: translateY(-50%); /* Vertically center the button */
+            padding: 8px 16px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .view-details:hover {
+            background-color: #0056b3;
+        }
+        .navbarp {
+            background-color: none;
+            overflow: hidden;
+            display: flex;
+            padding: 0.5em 1em;
+        }
+        .navbarp a {
+            color: black;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            display: block;
+        }
+        .navbarp a:hover {
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbarp">
+        <a href="homepage.html">Home</a>
+    </div>
+    <div class="container">
+        <!-- Heading for all clubs -->
+        <h1>KITS CLUBS ASSOCIATION</h1>
+
+        <!-- Club 1 -->
+        <div class="club">
+            <img src="rise.jpg" onclick="window.location.href='rise.html'" alt="Club Logo 1">
+            <div class="club-info">
+                <div class="club-name">Rise Club</div>
+                <div class="club-description">"RISE UP, START FRESH"</div>
+            </div>
+            <button class="view-details" onclick="window.location.href='rise.html'">View Details</button>
+        </div>
+
+        <!-- Club 2 -->
+        <div class="club">
+            <img src="ecell.jpg" onclick="window.location.href='ecell.html'" alt="Club Logo 2">
+            <div class="club-info">
+                <div class="club-name">Enterprenuership-Cell(E-cell)</div>
+                <div class="club-description">"YOU DREAM, WE PROMOTE"</div>
+            </div>
+            <button class="view-details" onclick="window.location.href='ecell.html'">View Details</button>
+        </div>
+
+        <!-- Club 3 -->
+        <div class="club">
+            <img src="innovation.jpg" onclick="window.location.href='innovation.html'" alt="Club Logo 3">
+            <div class="club-info">
+                <div class="club-name">Innovation Club</div>
+                <div class="club-description">"INNOVATIVE THINKING LEADS TO GREATER ACHIEVEMENT"</div>
+            </div>
+            <button class="view-details" onclick="window.location.href='innovation.html'">View Details</button>
+        </div>
+
+        <!-- Club 4 -->
+        <div class="club">
+            <img src="nss.jpg" onclick="window.location.href='nss.html'" alt="Club Logo 4">
+            <div class="club-info">
+                <div class="club-name">National Service Scheme(NSS)</div>
+                <div class="club-description">"TOGETHER TOWARDS TOMORROW"</div>
+            </div>
+            <button class="view-details" onclick="window.location.href='nss.html'">View Details</button>
+        </div>
+
+        <!-- Club 5 -->
+        <div class="club">
+            <img src="ncc.jpg" onclick="window.location.href='ncc.html'" alt="Club Logo 5">
+            <div class="club-info">
+                <div class="club-name">National Cadet Corps(NCC)</div>
+                <div class="club-description">"STREGTH IN SERVICE, UNITY IN ACTION"</div>
+            </div>
+            <button class="view-details" onclick="window.location.href='ncc.html'">View Details</button>
+        </div>
+
+        <!-- Club 6 -->
+        <div class="club">
+            <img src="jk.jpg" onclick="window.location.href='jk.html'" alt="Club Logo 6">
+            <div class="club-info">
+                <div class="club-name">Jeevan Kaushal</div>
+                <div class="club-description">"EVERY DAY OF YOUR LIFE IS AN ANOTHER LESSON"</div>
+            </div>
+            <button class="view-details" onclick="window.location.href='jk.html'">View Details</button>
+        </div>
+
+        <!-- Club 7 -->
+        <div class="club">
+            <img src="sports.jpg" onclick="window.location.href='sports.html'" alt="Club Logo 7">
+            <div class="club-info">
+                <div class="club-name">Sports Club</div>
+                <div class="club-description">"THE HARDER THE BATTLE, THE SWEETER THE VICTORY"</div>
+            </div>
+            <button class="view-details" onclick="window.location.href='sports.html'">View Details</button>
+        </div>
+
+        <!-- Club 8 -->
+        <div class="club">
+            <img src="cultural.jpg" onclick="window.location.href='cultural.html'" alt="Club Logo 8">
+            <div class="club-info">
+                <div class="club-name">Cultural Club</div>
+                <div class="club-description">"CULTURE IS THE ARTS ELEVATED TO A SET OF BELIEFS</div>
+            </div>
+            <button class="view-details" onclick="window.location.href='cultural.html'">View Details</button>
+        </div>
+
+        <!-- Add more clubs as needed -->
+    </div>
+
+</body>
+</html>
