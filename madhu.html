@@ -24,20 +24,33 @@
           flex-wrap: wrap;
           justify-content: space-between;
           align-items: center;
-          padding: 10px;
+          padding: 10px 20px;
           background-color: white;
           color: rgb(54, 54, 161);
-          text-align: center;
         }
       
-        .top-bar .kitslogo img,
-        .top-bar .badges img {
-          max-width: 100%;
+        .top-bar .kitslogo img {
+          max-width: 100px;
           height: auto;
         }
       
+        .top-bar .college-info {
+          flex: 1;
+          text-align: center;
+        }
+      
         .top-bar .college-info h1 {
-          font-size: 20px;
+          font-size: 18px;
+          margin-bottom: 5px;
+        }
+      
+        .top-bar .college-info p {
+          font-size: 14px;
+        }
+      
+        .top-bar .badges img {
+          max-width: 200px;
+          height: auto;
         }
       
         /* Navbar */
@@ -61,19 +74,37 @@
           color: white;
           text-decoration: none;
           font-size: 14px;
-          padding: 8px;
+          padding: 8px 10px;
         }
       
         .login-btn,
         .a {
           font-size: 14px;
           padding: 5px 10px;
+          margin: 5px;
         }
       
         /* Scrolling Message */
         .scrolling-message {
+          background-color: skyblue;
+          padding: 5px 10px;
           font-size: 12px;
-          padding: 5px;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      
+        .scrolling-message p {
+          animation: scroll 20s linear infinite;
+        }
+      
+        @keyframes scroll {
+          0% {
+            transform: translateX(100%);
+          }
+      
+          100% {
+            transform: translateX(-100%);
+          }
         }
       
         /* College Photo */
@@ -84,119 +115,171 @@
       
         /* Logo Bar */
         .logo-bar {
+          display: flex;
           flex-wrap: wrap;
           justify-content: center;
+          gap: 20px;
+          padding: 20px;
         }
       
         .logo-container {
-          margin: 10px;
-          width: 80px;
+          text-align: center;
+          flex: 1 1 150px;
+          max-width: 150px;
         }
       
-        .logo-container .logo {
-          width: 60px;
-          height: 60px;
+        .logo-container img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
         }
       
         .logo-name {
           font-size: 12px;
+          margin-top: 5px;
         }
       
         /* About Us Section */
         .about-us {
-          margin: 20px;
+          max-width: 90%;
+          margin: 20px auto;
           padding: 20px;
+          background-color: rgb(205, 236, 250);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
           font-size: 14px;
         }
       
         .vision-mission {
+          display: flex;
           flex-wrap: wrap;
+          gap: 20px;
         }
       
         .vision,
         .mission {
-          width: 100%;
+          flex: 1 1 100%;
+        }
+      
+        h1, h2 {
+          font-size: 1.5rem;
+          color: #2980b9;
         }
       
         /* Contact Section */
         .contact {
-          margin: 20px;
+          max-width: 90%;
+          margin: 20px auto;
           padding: 20px;
+          background-color: rgb(205, 236, 250);
           font-size: 14px;
         }
       
         .contact-boxes {
+          display: flex;
           flex-wrap: wrap;
+          gap: 20px;
           justify-content: center;
         }
       
         .contact-box {
-          width: 90%;
-          margin-bottom: 20px;
+          flex: 1 1 300px;
+          background: #ecf0f1;
+          padding: 15px;
+          border-radius: 8px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          text-align: center;
+        }
+      
+        .contact-box img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
         }
       
         /* Courses Section */
-        .courses .row {
-          flex-wrap: wrap;
+        .courses {
+          max-width: 90%;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: rgb(205, 236, 250);
         }
       
-        .courses .row > div {
-          width: 100%;
-          margin-bottom: 10px;
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
+        }
+      
+        .row > div {
+          flex: 1 1 300px;
+          background: white;
+          padding: 15px;
+          border-radius: 8px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          text-align: center;
         }
       
         /* Footer */
         .footer {
+          display: flex;
           flex-wrap: wrap;
-          text-align: center;
-        }
-      
-        .social-icons {
           justify-content: center;
-          margin-top: 10px;
+          gap: 10px;
+          padding: 20px;
+          background: rgb(66, 69, 238);
+          color: white;
+          font-size: 12px;
         }
       
-        /* Media Queries */
-        @media (min-width: 769px) {
-          .top-bar {
-            justify-content: space-between;
-          }
-      
-          .navbar {
-            justify-content: flex-end;
-          }
-      
-          .nav-links {
-            justify-content: flex-end;
-          }
-      
-          .contact-box {
-            width: 48%;
-          }
-      
-          .courses .row > div {
-            width: 30%;
-          }
+        .social-icons a {
+          color: white;
+          font-size: 16px;
+          text-decoration: none;
+          transition: color 0.3s ease;
         }
       
+        .social-icons a:hover {
+          color: lightgray;
+        }
+      
+        /* Media Queries for Smaller Screens */
         @media (max-width: 768px) {
           .top-bar {
             flex-direction: column;
+            text-align: center;
+          }
+      
+          .badges img,
+          .kitslogo img {
+            width: 80px;
+          }
+      
+          .college-info h1 {
+            font-size: 16px;
           }
       
           .navbar {
             flex-direction: column;
+            align-items: center;
           }
       
           .logo-bar {
-            flex-direction: column;
+            gap: 10px;
           }
       
-          .logo-container {
-            width: 100px;
+          .contact-box {
+            flex: 1 1 100%;
+          }
+      
+          .row > div {
+            flex: 1 1 100%;
           }
         }
-      </style>      
+      </style>
+          
   </head>
   <body>
     <!-- Top Bar -->
